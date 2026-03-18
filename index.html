@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoShield Pro - Bảng Giá Dịch Vụ Phim Cách Nhiệt & PPF</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #D4AF37; /* Gold */
+            --primary-dark: #AA8C2C;
+            --bg-dark: #0f0f0f;
+            --bg-card: #1a1a1a;
+            --text-light: #ffffff;
+            --text-gray: #a0a0a0;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .section-title span {
+            color: var(--primary-color);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(15, 15, 15, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-call {
+            background-color: var(--primary-color);
+            color: #000;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .btn-call:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Hero Banner */
+        .hero {
+            padding: 150px 0 100px;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1611016186353-9af58c69a533?q=80&w=2071&auto=format&fit=crop') center/cover;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Pricing Cards */
+        .pricing {
+            padding: 80px 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .price-card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--primary-color);
+            color: #000;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .card-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .card-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-gray);
+        }
+
+        .card-features {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .card-features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-gray);
+        }
+
+        .card-features i {
+            color: var(--primary-color);
+        }
+
+        .btn-book {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            color: var(--primary-color);
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .btn-book:hover, .price-card.popular .btn-book {
+            background-color: var(--primary-color);
+            color: #000;
+        }
+
+        .price-card.popular {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+            z-index: 1;
+        }
+
+        .price-card.popular:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        /* Advantages & Policies Grid */
+        .info-section {
+            padding: 80px 0;
+            background-color: #161616;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .info-box {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .info-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-list li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .info-list i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 3px;
+        }
+
+        .info-list p {
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 60px 0 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p, .footer-col li {
+            color: var(--text-gray);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copyright {
+            text-align: center;
+            color: var(--text-gray);
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Floating Actions (Zalo, Call) */
+        .floating-actions {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .fab {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .fab-zalo {
+            background-color: #0068FF;
+        }
+
+        .fab-call {
+            background-color: #28a745;
+        }
+
+        .fab:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(40, 167, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+        }
+
+        .fab-zalo { animation: pulse-zalo 2s infinite; }
+        @keyframes pulse-zalo {
+            0% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 104, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .price-card.popular {
+                transform: none;
+            }
+            .price-card.popular:hover {
+                transform: translateY(-10px);
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide menu on mobile for simplicity, or implement hamburger */
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-shield-halved"></i> AUTOSHIELD PRO
+            </a>
+            <ul class="nav-links">
+                <li><a href="#dich-vu">Bảng Giá Dịch Vụ</a></li>
+                <li><a href="#uu-diem">Ưu Điểm</a></li>
+                <li><a href="#chinh-sach">Chính Sách Đại Lý</a></li>
+            </ul>
+            <a href="tel:0988123456" class="btn-call"><i class="fa-solid fa-phone"></i> 0988.123.456</a>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="container fade-in">
+            <h1>BẢO VỆ TOÀN DIỆN <br> <span>NÂNG TẦM ĐẲNG CẤP</span></h1>
+            <p>Giải pháp dán Phim cách nhiệt & PPF bảo vệ sơn ô tô tiêu chuẩn quốc tế. Mang lại vẻ đẹp hoàn mỹ và sự an tâm tuyệt đối trên mọi hành trình.</p>
+            <a href="#dich-vu" class="btn-call" style="font-size: 1.2rem; padding: 15px 35px;">XEM BẢNG GIÁ NGAY</a>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="dich-vu" class="pricing container fade-in">
+        <h2 class="section-title">BẢNG GIÁ <span>DỊCH VỤ CHÍNH</span></h2>
+        
+        <div class="pricing-grid">
+            <!-- Gói 1 -->
+            <div class="price-card">
+                <div class="card-title">PHIM CÁCH NHIỆT CERAMIC</div>
+                <div class="card-price">8.500k <span>/ Xe 4 Chỗ</span></div>
+                <ul class="card-features">
+                    <li><i class="fa-solid fa-check"></i> Cản 99% tia UV gây hại</li>
+                    <li><i class="fa-solid fa-check"></i> Cách nhiệt hồng ngoại 90%</li>
+                    <li><i class="fa-solid fa-check"></i> Đảm bảo riêng tư tuyệt đối</li>
+                    <li><i class="fa-solid fa-check"></i> Không cản sóng GPS, ETC</li>
+                    <li><i class="fa-solid fa-check"></i> Bảo hành thông số 10 năm</li>
+                </ul>
+                <a href="tel:0988123456" class="btn-book">TƯ VẤN NGAY</a>
+            </div>
+
+            <!-- Gói 2 (Popular) -->
+            <div class="price-card popular">
+                <div class="popular-badge">BÁN CHẠY NHẤT</div>
+                <div class="card-title">PPF CAO CẤP (TPU)</div>
+                <div class="card-price">35.000k <span>/ Xe 4 Chỗ</span></div>
+                <ul class="card-features">
+                    <li><i class="fa-solid fa-check"></i> Vật liệu TPU siêu trong suốt</li>
+                    <li><i class="fa-solid fa-check"></i> Tự phục hồi vết xước dăm dăm</li>
+                    <li><i class="fa-solid fa-check"></i> Chống ố vàng, tăng bóng 30%</li>
+                    <li><i class="fa-solid fa-check"></i> Chống đá văng, va quệt nhẹ</li>
+                    <li><i class="fa-solid fa-check"></i> Bảo hành điện tử 7 năm</li>
+                </ul>
+                <a href="tel:0988123456" class="btn-book">ĐẶT LỊCH THI CÔNG</a>
+            </div>
+
+            <!-- Gói 3 -->
+            <div class="price-card">
+                <div class="card-title">PPF TIÊU CHUẨN (TPH)</div>
+                <div class="card-price">15.000k <span>/ Xe 4 Chỗ</span></div>
+                <ul class="card-features">
+                    <li><i class="fa-solid fa-check"></i> Vật liệu TPH chịu lực tốt</li>
+                    <li><i class="fa-solid fa-check"></i> Bảo vệ sơn gốc khỏi xước xát</li>
+                    <li><i class="fa-solid fa-check"></i> Hiệu ứng lá sen chống bám bẩn</li>
+                    <li><i class="fa-solid fa-check"></i> Dễ dàng vệ sinh, rửa xe</li>
+                    <li><i class="fa-solid fa-check"></i> Bảo hành bong tróc 3 năm</li>
+                </ul>
+                <a href="tel:0988123456" class="btn-book">TƯ VẤN NGAY</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages & Policies -->
+    <section class="info-section fade-in">
+        <div class="container grid-2">
+            <!-- Ưu điểm -->
+            <div id="uu-diem" class="info-box">
+                <h3><i class="fa-solid fa-medal"></i> ƯU ĐIỂM VƯỢT TRỘI</h3>
+                <ul class="info-list">
+                    <li>
+                        <i class="fa-solid fa-snowflake"></i>
+                        <div>
+                            <strong>Thi Công Phòng Lạnh Tiêu Chuẩn</strong>
+                            <p>Đảm bảo môi trường không bụi bẩn, nhiệt độ ổn định giúp lớp keo bám dính tối đa.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-user-gear"></i>
+                        <div>
+                            <strong>Kỹ Thuật Viên Tay Nghề Cao</strong>
+                            <p>Đội ngũ thợ thi công trên 5 năm kinh nghiệm, cắt tỉa mép chuẩn xác không phạm sơn.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-file-shield"></i>
+                        <div>
+                            <strong>Bảo Hành Điện Tử Toàn Quốc</strong>
+                            <p>Check mã bảo hành trực tuyến. Cam kết xử lý nhanh chóng nếu có lỗi bong tróc, nổi bọt.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Chính sách -->
+            <div id="chinh-sach" class="info-box">
+                <h3><i class="fa-solid fa-handshake"></i> CHÍNH SÁCH ĐẠI LÝ</h3>
+                <ul class="info-list">
+                    <li>
+                        <i class="fa-solid fa-bullseye"></i>
+                        <div>
+                            <strong>Không Áp Đặt Doanh Số</strong>
+                            <p>Đồng hành cùng phát triển, không tạo áp lực tồn vốn cho đối tác và đại lý.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-bullhorn"></i>
+                        <div>
+                            <strong>Hỗ Trợ Marketing Toàn Diện</strong>
+                            <p>Cung cấp hình ảnh, video thi công, bài viết quảng cáo và chiến lược thu hút khách hàng.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <div>
+                            <strong>Đào Tạo Kỹ Thuật Chuyên Sâu</strong>
+                            <p>Tổ chức training kỹ năng dán PPF, dán phim định kỳ hàng năm cho kỹ thuật viên đại lý.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-store"></i>
+                        <div>
+                            <strong>Nhận Diện Thương Hiệu</strong>
+                            <p>Tài trợ biển bảng, áo thợ, tủ trưng bày cuộn phim cho các garage, trung tâm đối tác.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 20px; font-size: 1.5rem;">
+                        <i class="fa-solid fa-shield-halved"></i> AUTOSHIELD PRO
+                    </a>
+                    <p>Chuyên gia hàng đầu trong lĩnh vực nâng cấp và bảo vệ bề mặt ô tô. Chúng tôi cam kết mang lại sản phẩm thật, giá trị thật cho khách hàng và đối tác.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>THÔNG TIN LIÊN HỆ</h4>
+                    <p><i class="fa-solid fa-user"></i> Mr. Hoàng (Giám đốc Kinh doanh)</p>
+                    <p><i class="fa-solid fa-phone"></i> 0988.123.456</p>
+                    <p><i class="fa-solid fa-envelope"></i> contact@autoshieldpro.vn</p>
+                </div>
+                <div class="footer-col">
+                    <h4>HỆ THỐNG CHI NHÁNH</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> <strong>Trụ sở chính:</strong> 123 Đường Số 1, KDC Him Lam, Quận 7, TP.HCM</p>
+                    <p><i class="fa-solid fa-location-dot"></i> <strong>Chi nhánh HN:</strong> 456 Lê Văn Lương, Thanh Xuân, Hà Nội</p>
+                    <p><i class="fa-solid fa-location-dot"></i> <strong>Chi nhánh ĐN:</strong> 789 Nguyễn Hữu Thọ, Hải Châu, Đà Nẵng</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 AutoShield Pro. Thiết kế chuẩn UI/UX và tối ưu chuyển đổi.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons (Zalo / Call) -->
+    <div class="floating-actions">
+        <!-- Thay link zalo bằng SĐT của bạn -->
+        <a href="https://zalo.me/0988123456" target="_blank" class="fab fab-zalo" title="Chat Zalo">
+            <i class="fa-solid fa-comment-dots"></i>
+        </a>
+        <a href="tel:0988123456" class="fab fab-call" title="Gọi Ngay">
+            <i class="fa-solid fa-phone-volume"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript for Animations -->
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(10, 10, 10, 0.98)';
+                header.style.padding = '10px 0';
+            } else {
+                header.style.backgroundColor = 'rgba(15, 15, 15, 0.95)';
+                header.style.padding = '15px 0';
+            }
+        });
+
+        // Scroll Animation (Fade-in elements when in viewport)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach((elem) => {
+            observer.observe(elem);
+        });
+    </script>
+</body>
+</html>
